@@ -1,17 +1,106 @@
-<h1>Arrow function</h1>
-<a href="bag1.html">balik</a>
-<script>
-//luas persegi
-  persegi = (sisi) => sisi * sisi;
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Arrow Function</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6fb;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+            padding: 32px 24px;
+        }
+        h1 {
+            color: #2d3a4b;
+            margin-bottom: 12px;
+        }
+        a {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .card {
+            background: #f9fafb;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px #eee;
+        }
+        code {
+            background: #e5e7eb;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        .output {
+            background: #222;
+            color: #0f0;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: 'Fira Mono', 'Consolas', monospace;
+        }
+        @media (max-width: 700px) {
+            .container {
+                padding: 16px 4vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tutorial Arrow Function</h1>
+        <a href="bag1.html">&larr; Kembali ke Halaman Sebelumnya</a>
 
-  p1 = persegi(3); // p1 adalah variabel yang menyimpan hasil dari fungsi persegi dengan argumen 5
+        <div class="card">
+            <h2>1. Luas Persegi</h2>
+            <p>
+                Arrow function untuk menghitung luas persegi:<br>
+                <code>const persegi = (sisi) =&gt; sisi * sisi;</code>
+            </p>
+            <p>
+                Contoh penggunaan:<br>
+                <code>const hasil = persegi(3);</code>
+            </p>
+            <div id="output-persegi" class="output"></div>
+        </div>
 
-  console.log("Hasil dari persegi(5) adalah: " + p1);
+        <div class="card">
+            <h2>2. Luas Persegi Panjang</h2>
+            <p>
+                Arrow function untuk menghitung luas persegi panjang:<br>
+                <code>const persegiPanjang = (panjang, lebar) =&gt; panjang * lebar;</code>
+            </p>
+            <p>
+                Contoh penggunaan:<br>
+                <code>const hasil = persegiPanjang(5, 10);</code>
+            </p>
+            <div id="output-persegi-panjang" class="output"></div>
+        </div>
+    </div>
+    <script>
+        // Fungsi arrow untuk luas persegi
+        const persegi = (sisi) => sisi * sisi;
+        const hasilPersegi = persegi(3);
+        document.getElementById('output-persegi').textContent =
+            `Hasil dari persegi(3) adalah: ${hasilPersegi}`;
 
-//luas persegi panjang
-    persegiPanjang = (x,y) => x * y;
-
-    persegiPanjang1 = persegiPanjang(5, 10); // p2 adalah variabel yang menyimpan hasil dari fungsi persegiPanjang dengan argumen 5 dan 10
-
-    console.log("Hasil dari persegiPanjang(5, 10) adalah: " + persegiPanjang1);
-</script>
+        // Fungsi arrow untuk luas persegi panjang
+        const persegiPanjang = (panjang, lebar) => panjang * lebar;
+        const hasilPersegiPanjang = persegiPanjang(5, 10);
+        document.getElementById('output-persegi-panjang').textContent =
+            `Hasil dari persegiPanjang(5, 10) adalah: ${hasilPersegiPanjang}`;
+    </script>
+</body>
+</html>
