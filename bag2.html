@@ -1,10 +1,17 @@
+<h1>Arrow function</h1>
 <a href="bag1.html">balik</a>
 <script>
-  function persegi(x){
-    return x * x;
-  }
+//luas persegi
+  persegi = (sisi) => sisi * sisi;
 
-  p1 = persegi(5);
+  p1 = persegi(3); // p1 adalah variabel yang menyimpan hasil dari fungsi persegi dengan argumen 5
 
   console.log("Hasil dari persegi(5) adalah: " + p1);
+
+//luas persegi panjang
+    persegiPanjang = (x,y) => x * y;
+
+    persegiPanjang1 = persegiPanjang(5, 10); // p2 adalah variabel yang menyimpan hasil dari fungsi persegiPanjang dengan argumen 5 dan 10
+
+    console.log("Hasil dari persegiPanjang(5, 10) adalah: " + persegiPanjang1);
 </script>
