@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function contoh_var() {
+        var a = 1;
+        if (true) {
+          var a = 2;
+          console.log("di dalam if var" + a);
+        }
+
+        console.log("di luar if var" + a) ;
+      }
+
+      function contoh_let() {
+        let b = 1;
+        if (true) {
+          let b = 2;
+          console.log("di dalam if let " + b);
+        }
+        console.log("di luar if let " + b);
+      }
+      
+
+      contoh_var();
+      contoh_let();
+    </script>
+  </body>
+</html>
