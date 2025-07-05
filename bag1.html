@@ -8,27 +8,32 @@
   <body>
     <script>
       function contoh_var() {
-        var a = 1;
+        var a = 1; // otomatis berubah menjadi 2 sesuai yang di bawah
         if (true) {
           var a = 2;
           console.log("di dalam if var" + a);
         }
 
-        console.log("di luar if var" + a) ;
+        console.log("di luar if var" + a);
       }
 
       function contoh_let() {
-        let b = 1;
+        let b = 1; // tetap 1 tidak berubah
         if (true) {
           let b = 2;
           console.log("di dalam if let " + b);
         }
         console.log("di luar if let " + b);
       }
-      
+
+      function contoh_const() {
+        const c = 1; // tetap 1 tidak berubah
+        const c = 3; // error karena tidak bisa redeclare tidak bisa di ubah untuk const
+      }
 
       contoh_var();
       contoh_let();
+      contoh_const();
     </script>
   </body>
 </html>
