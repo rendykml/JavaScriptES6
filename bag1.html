@@ -21,6 +21,7 @@
         let b = 1; // tetap 1 tidak berubah
         if (true) {
           let b = 2;
+          b = 5;    // bisa diubah karena ini adalah let
           console.log("di dalam if let " + b);
         }
         console.log("di luar if let " + b);
@@ -28,11 +29,13 @@
 
       function contoh_const() {
         const c = 1; // tetap 1 tidak berubah
-        const c = 3; // error karena tidak bisa redeclare tidak bisa di ubah untuk const
+        // c = 3; // error karena tidak bisa redeclare tidak bisa di ubah untuk const
+        console.log(c);
       }
 
       contoh_var();
       contoh_let();
+      contoh_const();
       contoh_const();
     </script>
   </body>
