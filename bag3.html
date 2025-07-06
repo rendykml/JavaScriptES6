@@ -10,4 +10,17 @@
         // filter
         const filteredNumbers = doubleNumber.filter((filter) => filter % 3 === 0);
         console.log('Hasil filter:', filteredNumbers);
+
+
+        //reduce
+        const sum = filteredNumbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+        console.log('Hasil reduce:', sum);
+
+        const sum2 = filteredNumbers.reduce(function (accumulator, currentValue) {
+            console.log('Accumulator:', accumulator);
+            console.log('Current value:', currentValue);
+            return accumulator + currentValue;
+            
+        });
+        console.log('Hasil reduce:', sum2);
     </script>
