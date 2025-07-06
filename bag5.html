@@ -1,0 +1,24 @@
+<script>
+    // destructuring
+
+    // Destructuring array
+    const numbers = [1,2,3,4,5];
+    const [first, second,third, ...rest] = numbers;
+    console.log('First:', first);
+    console.log('Third:', third);
+
+    const person = {
+        name: 'Rendy Kamaluddin',
+        age: 20,
+        city: 'Bandung',
+        country: 'Indonesia'
+    };
+
+    const { name, age, city:kota, ...otherDetails } = person;
+
+    console.log('Name:', name);
+    console.log('Age:', age);
+    console.log('Kota:', kota);
+    
+
+</script>
