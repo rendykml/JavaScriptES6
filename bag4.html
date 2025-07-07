@@ -1,14 +1,114 @@
-<script>
-    // spread operator
-    const num1 = [1, 2, 3,];
-    const num2 = [4, 5, 6];
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial Spread Operator</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f4f6fb;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+        padding: 32px 24px;
+      }
+      h1 {
+        color: #2d3a4b;
+        margin-bottom: 12px;
+      }
+      a {
+        display: inline-block;
+        margin-bottom: 24px;
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .card {
+        background: #f9fafb;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 8px #eee;
+      }
+      code {
+        background: #e5e7eb;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 1em;
+      }
+      .output {
+        background: #222;
+        color: #0f0;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 10px;
+        font-family: "Fira Mono", "Consolas", monospace;
+        white-space: pre-line;
+      }
+      @media (max-width: 700px) {
+        .container {
+          padding: 16px 4vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tutorial Spread Operator</h1>
+      <a href="bag3.html">&larr; Kembali ke Array Method</a>
 
-    const combined = [...num1 ,...num2];
-    console.log('Combined array:', combined);
+      <div class="card">
+        <h2>1. Spread pada Array</h2>
+        <p>
+          Spread operator (<code>...</code>) digunakan untuk menggabungkan atau
+          menyalin array.<br />
+          <code>const combined = [...num1, ...num2];</code>
+        </p>
+        <div id="output-array" class="output"></div>
+      </div>
 
-    const obj1 = { nama: 'Rendy Kamaluddin', umur : 20}
-    const obj2 = { alamat: 'Bandunt', hobi: 'Coding'};
+      <div class="card">
+        <h2>2. Spread pada Object</h2>
+        <p>
+          Spread operator juga bisa digunakan untuk menggabungkan object.<br />
+          <code>const combinedObj = {...obj1, ...obj2};</code>
+        </p>
+        <div id="output-object" class="output"></div>
+      </div>
+    </div>
+    <script>
+      // Spread pada Array
+      const num1 = [1, 2, 3];
+      const num2 = [4, 5, 6];
+      const combined = [...num1, ...num2];
+      document.getElementById(
+        "output-array"
+      ).textContent = `Array 1: [${num1.join(", ")}]\nArray 2: [${num2.join(
+        ", "
+      )}]\nHasil gabung: [${combined.join(", ")}]`;
 
-    console.log('Combined object:', {...obj1, ...obj2});
-
-</script>
+      // Spread pada Object
+      const obj1 = { nama: "Rendy Kamaluddin", umur: 20 };
+      const obj2 = { alamat: "Bandung", hobi: "Coding" };
+      const combinedObj = { ...obj1, ...obj2 };
+      document.getElementById(
+        "output-object"
+      ).textContent = `Objek 1: ${JSON.stringify(
+        obj1,
+        null,
+        2
+      )}\nObjek 2: ${JSON.stringify(
+        obj2,
+        null,
+        2
+      )}\nHasil gabung:\n${JSON.stringify(combinedObj, null, 2)}`;
+    </script>
+  </body>
+</html>

@@ -1,24 +1,118 @@
-<script>
-    // destructuring
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial Destructuring</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f4f6fb;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+        padding: 32px 24px;
+      }
+      h1 {
+        color: #2d3a4b;
+        margin-bottom: 12px;
+      }
+      a {
+        display: inline-block;
+        margin-bottom: 24px;
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .card {
+        background: #f9fafb;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 8px #eee;
+      }
+      code {
+        background: #e5e7eb;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 1em;
+      }
+      .output {
+        background: #222;
+        color: #0f0;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 10px;
+        font-family: "Fira Mono", "Consolas", monospace;
+        white-space: pre-line;
+      }
+      @media (max-width: 700px) {
+        .container {
+          padding: 16px 4vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tutorial Destructuring</h1>
+      <a href="bag4.html">&larr; Kembali ke Spread Operator</a>
 
-    // Destructuring array
-    const numbers = [1,2,3,4,5];
-    const [first, second,third, ...rest] = numbers;
-    console.log('First:', first);
-    console.log('Third:', third);
+      <div class="card">
+        <h2>1. Destructuring Array</h2>
+        <p>
+          Destructuring array memudahkan pengambilan nilai dari array ke
+          variabel.<br />
+          <code>const [first, second, third, ...rest] = numbers;</code>
+        </p>
+        <div id="output-array" class="output"></div>
+      </div>
 
-    const person = {
-        name: 'Rendy Kamaluddin',
+      <div class="card">
+        <h2>2. Destructuring Object</h2>
+        <p>
+          Destructuring object memudahkan pengambilan properti dari object ke
+          variabel.<br />
+          <code
+            >const { name, age, city: kota, ...otherDetails } = person;</code
+          >
+        </p>
+        <div id="output-object" class="output"></div>
+      </div>
+    </div>
+    <script>
+      // Destructuring array
+      const numbers = [1, 2, 3, 4, 5];
+      const [first, second, third, ...rest] = numbers;
+      document.getElementById(
+        "output-array"
+      ).textContent = `Array: [${numbers.join(", ")}]
+first: ${first}
+second: ${second}
+third: ${third}
+rest: [${rest.join(", ")}]`;
+
+      // Destructuring object
+      const person = {
+        name: "Rendy Kamaluddin",
         age: 20,
-        city: 'Bandung',
-        country: 'Indonesia'
-    };
-
-    const { name, age, city:kota, ...otherDetails } = person;
-
-    console.log('Name:', name);
-    console.log('Age:', age);
-    console.log('Kota:', kota);
-    
-
-</script>
+        city: "Bandung",
+        country: "Indonesia",
+      };
+      const { name, age, city: kota, ...otherDetails } = person;
+      document.getElementById(
+        "output-object"
+      ).textContent = `Object: ${JSON.stringify(person, null, 2)}
+name: ${name}
+age: ${age}
+kota: ${kota}
+otherDetails: ${JSON.stringify(otherDetails, null, 2)}`;
+    </script>
+  </body>
+</html>
