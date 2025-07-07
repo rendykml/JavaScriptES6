@@ -1,11 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contoh Modular JavaScript</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f4f6fb;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+        padding: 32px 24px;
+      }
+      h1 {
+        color: #2d3a4b;
+        margin-bottom: 12px;
+      }
+      .output {
+        background: #222;
+        color: #0f0;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 10px;
+        font-family: "Fira Mono", "Consolas", monospace;
+      }
+      @media (max-width: 700px) {
+        .container {
+          padding: 16px 4vw;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div class="container">
+      <h1>Contoh Modular JavaScript</h1>
+      <p>
+        Halaman ini menggunakan <b>type="module"</b> sehingga kamu bisa
+        menggunakan <code>import</code> dan <code>export</code> di file JS.
+      </p>
+      <div id="output" class="output"></div>
+      <div class="card">
+        <h2>Penjelasan File <code>app.js</code></h2>
+        <p>
+          File <code>app.js</code> adalah modul utama yang mengimpor fungsi
+          <code>add</code>, <code>subtract</code>, dan
+          <code>multiply</code> dari <code>util.js</code> menggunakan sintaks
+          <code>import</code>.<br />
+          Contoh kode di <code>app.js</code>:
+        </p>
+        <code>
+          import &#123; add, subtract, multiply &#125; from './util.js';
+          console.log(add(5, 3)); // 8 console.log(subtract(100, 4)); // 96
+          console.log(multiply(2, 3)); // 6
+          document.getElementById('output').textContent = 'Modul JavaScript
+          berhasil dijalankan!';
+        </code>
+        <p>
+          Hasil dari fungsi yang diimpor akan tampil di <b>console browser</b>,
+          sedangkan pesan "Modul JavaScript berhasil dijalankan!" akan tampil di
+          kotak output halaman ini.
+        </p>
+      </div>
+    </div>
+    <script src="app.js" type="module"></script>
   </body>
-  <script src="app.js" type="module"></script>
 </html>

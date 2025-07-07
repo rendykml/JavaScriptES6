@@ -1,114 +1,141 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tutorial Array Method: map, filter, reduce</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f4f6fb;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f4f6fb;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+        padding: 32px 24px;
+      }
+      h1 {
+        color: #2d3a4b;
+        margin-bottom: 12px;
+      }
+      a {
+        display: inline-block;
+        margin-bottom: 24px;
+        color: #3b82f6;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .card {
+        background: #f9fafb;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 8px #eee;
+      }
+      code {
+        background: #e5e7eb;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 1em;
+      }
+      .output {
+        background: #222;
+        color: #0f0;
+        padding: 10px;
+        border-radius: 4px;
+        margin-top: 10px;
+        font-family: "Fira Mono", "Consolas", monospace;
+        white-space: pre-line;
+      }
+      @media (max-width: 700px) {
         .container {
-            max-width: 600px;
-            margin: 40px auto;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-            padding: 32px 24px;
+          padding: 16px 4vw;
         }
-        h1 {
-            color: #2d3a4b;
-            margin-bottom: 12px;
-        }
-        a {
-            display: inline-block;
-            margin-bottom: 24px;
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .card {
-            background: #f9fafb;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 8px #eee;
-        }
-        code {
-            background: #e5e7eb;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 1em;
-        }
-        .output {
-            background: #222;
-            color: #0f0;
-            padding: 10px;
-            border-radius: 4px;
-            margin-top: 10px;
-            font-family: 'Fira Mono', 'Consolas', monospace;
-            white-space: pre-line;
-        }
-        @media (max-width: 700px) {
-            .container {
-                padding: 16px 4vw;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>Tutorial Array Method: <code>map</code>, <code>filter</code>, <code>reduce</code></h1>
-        <a href="bag2.html">&larr; Kembali ke Arrow Function</a>
+      <h1>
+        Tutorial Array Method: <code>map</code>, <code>filter</code>,
+        <code>reduce</code>
+      </h1>
+      <a href="bag2.html">&larr; Kembali ke Arrow Function</a> <br>
+      <a href="bag4.html">&rarr; Lanjut ke Spread Operator</a>
 
-        <div class="card">
-            <h2>1. map()</h2>
-            <p>
-                <b>map()</b> digunakan untuk membuat array baru dengan memproses setiap elemen array asal.<br>
-                <code>const doubleNumber = numbers.map((number) =&gt; number * 3);</code>
-            </p>
-            <div id="output-map" class="output"></div>
-        </div>
+      <div class="card">
+        <h2>1. map()</h2>
+        <p>
+          <b>map()</b> digunakan untuk membuat array baru dengan memproses
+          setiap elemen array asal.<br />
+          <code
+            >const doubleNumber = numbers.map((number) =&gt; number * 3);</code
+          >
+        </p>
+        <div id="output-map" class="output"></div>
+      </div>
 
-        <div class="card">
-            <h2>2. filter()</h2>
-            <p>
-                <b>filter()</b> digunakan untuk membuat array baru berisi elemen yang lolos kondisi tertentu.<br>
-                <code>const filteredNumbers = doubleNumber.filter((filter) =&gt; filter % 3 === 0);</code>
-            </p>
-            <div id="output-filter" class="output"></div>
-        </div>
+      <div class="card">
+        <h2>2. filter()</h2>
+        <p>
+          <b>filter()</b> digunakan untuk membuat array baru berisi elemen yang
+          lolos kondisi tertentu.<br />
+          <code
+            >const filteredNumbers = doubleNumber.filter((filter) =&gt; filter %
+            3 === 0);</code
+          >
+        </p>
+        <div id="output-filter" class="output"></div>
+      </div>
 
-        <div class="card">
-            <h2>3. reduce()</h2>
-            <p>
-                <b>reduce()</b> digunakan untuk mengakumulasi nilai array menjadi satu nilai saja.<br>
-                <code>const sum = filteredNumbers.reduce((accumulator, currentValue) =&gt; accumulator + currentValue);</code>
-            </p>
-            <div id="output-reduce" class="output"></div>
-        </div>
+      <div class="card">
+        <h2>3. reduce()</h2>
+        <p>
+          <b>reduce()</b> digunakan untuk mengakumulasi nilai array menjadi satu
+          nilai saja.<br />
+          <code
+            >const sum = filteredNumbers.reduce((accumulator, currentValue)
+            =&gt; accumulator + currentValue);</code
+          >
+        </p>
+        <div id="output-reduce" class="output"></div>
+      </div>
     </div>
     <script>
-        // Data awal
-        const numbers = [1, 2, 3, 4, 5];
+      // Data awal
+      const numbers = [1, 2, 3, 4, 5];
 
-        // map
-        const doubleNumber = numbers.map((number) => number * 3);
-        document.getElementById('output-map').textContent =
-            `Array awal: [${numbers.join(', ')}]\nHasil map (dikali 3): [${doubleNumber.join(', ')}]`;
+      // map
+      const doubleNumber = numbers.map((number) => number * 3);
+      document.getElementById(
+        "output-map"
+      ).textContent = `Array awal: [${numbers.join(
+        ", "
+      )}]\nHasil map (dikali 3): [${doubleNumber.join(", ")}]`;
 
-        // filter
-        const filteredNumbers = doubleNumber.filter((filter) => filter % 3 === 0);
-        document.getElementById('output-filter').textContent =
-            `Array hasil map: [${doubleNumber.join(', ')}]\nHasil filter (kelipatan 3): [${filteredNumbers.join(', ')}]`;
+      // filter
+      const filteredNumbers = doubleNumber.filter((filter) => filter % 3 === 0);
+      document.getElementById(
+        "output-filter"
+      ).textContent = `Array hasil map: [${doubleNumber.join(
+        ", "
+      )}]\nHasil filter (kelipatan 3): [${filteredNumbers.join(", ")}]`;
 
-        // reduce
-        const sum = filteredNumbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-        document.getElementById('output-reduce').textContent =
-            `Array hasil filter: [${filteredNumbers.join(', ')}]\nHasil reduce (jumlahkan semua): ${sum}`;
+      // reduce
+      const sum = filteredNumbers.reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        0
+      );
+      document.getElementById(
+        "output-reduce"
+      ).textContent = `Array hasil filter: [${filteredNumbers.join(
+        ", "
+      )}]\nHasil reduce (jumlahkan semua): ${sum}`;
     </script>
-</body>
+  </body>
 </html>
